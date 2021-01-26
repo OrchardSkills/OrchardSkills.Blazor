@@ -1,90 +1,124 @@
 ﻿@inject NavigationManager NavigationManager
 
-<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">BlazorNet5Samples</a>
-    <div class="custom-control custom-switch">
-        <input type="checkbox" class="custom-control-input" id="wasmSwitch" @bind="Wasm" />
-        <label class="custom-control-label" for="wasmSwitch">WebAssembly</label>
-    </div>
-    <button class="navbar-toggler" @onclick="ToggleNavMenu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</div>
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <ul class="nav flex-column">
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
+
+<!-- Sidenav-->
+<div id="sidenav-1" class="sidenav" data-mdb-mode="side" data-mdb-slim="true" data-mdb-slim-collapsed="true"
+     data-mdb-content="#slim-content">
+
+    <!-- Default switch -->
+    <div class="form-check form-switch d-flex justify-content-center m-3" >
+        <input class="form-check-input " type="checkbox" id="flexSwitchCheckDefault"@bind="Wasm" style="margin-right: unset;" />
+        <label class="form-check-label ps-1" for="flexSwitchCheckDefault"><span data-mdb-slim="false"> WebAssembly</span></label>
+    </div>
+
+
+
+    <br>
+    <br>
+    <ul class="sidenav-menu">
+        <li class="sidenav-item">
+            <div id="slim-toggler" class="sidesidenav-link" style="
+                display: flex;
+                justify-content: center;">
+                <span style="font-size: 2rem;" class="oi oi-resize-width"></span>
+            </div>
+        </li>
+
+
+        <br>
+
+
+        <li class="sidenav-item">
+            <NavLink class="sidenav-link" href="" Match="NavLinkMatch.All">
+                <i class="oi oi-home" aria-hidden="true"></i> <span class="ps-1" data-mdb-slim="false">Home</span>
             </NavLink>
         </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
+
+        <li class="sidenav-item">
+            <NavLink class="sidenav-link" href="counter">
+                <i class="oi oi-plus" aria-hidden="true"></i> <span class="ps-1" data-mdb-slim="false">Counter</span>
             </NavLink>
         </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+        <li class="sidenav-item">
+            <NavLink class="sidenav-link" href="fetchdata">
+                <i class="oi oi-list-rich" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> Fetch data </span>
             </NavLink>
         </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="css-isolation">
-                <span class="oi oi-check" aria-hidden="true"></span> CSS isolation
+        <li class="sidenav-item">
+            <NavLink class="sidenav-link" href="css-isolation">
+                <i class="oi oi-dashboard" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> CSS isolation </span>
             </NavLink>
         </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="js-isolation">
-                <span class="oi oi-check" aria-hidden="true"></span> JavaScript isolation
+        <li class="sidenav-item">
+            <NavLink class="sidenav-link" href="js-isolation">
+                <i class="oi oi-code" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> JavaScript isolation </span>
             </NavLink>
         </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="file-upload">
-                <span class="oi oi-check" aria-hidden="true"></span> File upload
+        <li class="sidenav-item">
+            <NavLink class="sidenav-link" href="file-upload">
+                <i class="oi oi-file" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> File upload</span>
             </NavLink>
         </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="input-radio">
-                <span class="oi oi-check" aria-hidden="true"></span> InputRadio
+        <li class="sidenav-item">
+            <NavLink class="sidenav-link" href="input-radio">
+                <i class="oi oi-check" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> InputRadio</span>
             </NavLink>
         </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="virtualization">
-                <span class="oi oi-check" aria-hidden="true"></span> Virtualization
+        <li class="sidenav-item">
+            <NavLink class="sidenav-link" href="virtualization">
+                <i class="oi oi-cloudy" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> Virtualization</span>
             </NavLink>
         </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="persisted-counter">
-                <span class="oi oi-check" aria-hidden="true"></span> Protected browser storage
+        @if (!wasm)
+        {
+            <li class="sidenav-item">
+                <NavLink class="sidenav-link" href="persisted-counter">
+                    <i class="oi oi-box" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> Protected browser storage</span>
+                </NavLink>
+            </li>
+        }
+
+
+        <li class="sidenav-item">
+            <NavLink class="sidenav-link" href="ui-focus">
+                <i class="oi oi-check" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> Set UI focus</span>
             </NavLink>
         </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="lazy-loading">
-                <span class="oi oi-check" aria-hidden="true"></span> Lazy loading
+
+        <li class="sidenav-item">
+            <NavLink class="sidenav-link" href="influence-html-head">
+                <i class="oi oi-bell" aria-hidden="true"></i> <span class="ps-1" data-mdb-slim="false">Influence the HTML head</span>
             </NavLink>
         </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="ui-focus">
-                <span class="oi oi-check" aria-hidden="true"></span> Set UI focus
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="influence-html-head">
-                <span class="oi oi-check" aria-hidden="true"></span> Influence the HTML head
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="catch-all-route-parameters">
-                <span class="oi oi-check" aria-hidden="true"></span> Catch-all route parameters
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="wasm-prerendering">
-                <span class="oi oi-check" aria-hidden="true"></span> Blazor WebAssembly prerendering
-            </NavLink>
-        </li>
+        @if (wasm)
+        {
+            <li class="sidenav-item">
+                <NavLink class="sidenav-link" href="lazy-loading">
+                    <i class="oi oi-audio-spectrum" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> Lazy loading</span>
+                </NavLink>
+            </li>
+ 
+            <li class="sidenav-item">
+                <NavLink class="sidenav-link" href="wasm-prerendering">
+                    <i class="oi oi-excerpt" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> WebAssembly prerendering</span>
+                </NavLink>
+            </li>
+        }
+
+
+        <!-- <li class="sidenav-item">
+        <a class="sidesidenav-link" href="fetchdata">
+            <i class="fas fa-chart-area fa-fw me-3"></i><span data-mdb-slim="false">Fetch Data</span>
+        </a>
+    </li> -->
+
+
     </ul>
+
+
 </div>
+<!-- Sidenav-->
 
 @code {
     private bool collapseNavMenu = true;

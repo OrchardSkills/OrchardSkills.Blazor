@@ -1,17 +1,39 @@
 @inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
 
-    <div class="main">
-        <div class="top-row px-4">
-            <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
-        </div>
 
-        <div class="content px-4">
-            @Body
+<!--Main Navigation-->
+<header>
+    <NavMenu />
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-color  fixed-top">
+        <!-- Container wrapper -->
+        <div class="container ">
+
+            <!-- Toggler -->
+            <button data-mdb-toggle="sidenav" data-target="#sidenav-1" class="btn shadow-0 p-0 me-3 d-block d-xxl-none"
+                    aria-controls="#sidenav-1" aria-haspopup="true">
+                <span class="oi oi-menu"></span>
+            </button>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="http://blazor.net" target="_blank">About</a>
+                </li>
+            </ul>
+
+
+            <!-- Desktop View -->
         </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+</header>
+<!--Main Navigation-->
+<br>
+<!--Main Layout-->
+<main id="slim-content">
+    <div class="container-fluid mt-5">
+        @Body
     </div>
-</div>
+</main>
+<!--/Main layout-->
