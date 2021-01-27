@@ -1,0 +1,17 @@
+﻿@inject IJSRuntime js;
+
+<label id="switch" class="switch navbar-item pe-md-5">
+    <input type="checkbox" @onchange="ToggleThemeMethode" id="slider" aria-label="Theme Switch">
+    <span class="slider round"></span>
+</label>
+
+@code {
+
+
+
+    private async Task ToggleThemeMethode()
+    {
+       await js.InvokeVoidAsync("toggleTheme");
+    }
+
+}

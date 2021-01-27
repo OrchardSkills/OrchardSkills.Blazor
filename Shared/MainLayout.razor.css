@@ -1,0 +1,19 @@
+
+
+.mdb-page-content {
+    padding-left: 240px;
+    transition: padding 0.3s linear;
+}
+
+
+
+@media (max-width: 660px) {
+    .mdb-page-content {
+        padding-left: var(--bs-gutter-x,.75rem);
+    }
+
+
+    .sidenav[data-mdb-hidden='false'] {
+        transform: translateX(-100%);
+    }
+}
