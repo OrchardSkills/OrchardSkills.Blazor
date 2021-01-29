@@ -19,7 +19,8 @@
             <div id="slim-toggler" class="sidesidenav-link cursor-pointer" style="
                 display: flex;
                 justify-content: center;">
-                <span style="font-size: 2rem;" class="oi oi-resize-width"></span>
+                <i class="fas fa-arrows-alt-h fa-2x"></i>
+
             </div>
         </li>
 
@@ -29,50 +30,50 @@
 
         <li class="sidenav-item">
             <NavLink class="sidenav-link" href="" Match="NavLinkMatch.All">
-                <i class="oi oi-home" aria-hidden="true"></i> <span class="ps-1" data-mdb-slim="false">Home</span>
+                <div class="center"> <i class="fas fa-home "></i> </div><span class="ps-1" data-mdb-slim="false">Home</span>
             </NavLink>
         </li>
 
         <li class="sidenav-item">
             <NavLink class="sidenav-link" href="counter">
-                <i class="oi oi-plus" aria-hidden="true"></i> <span class="ps-1" data-mdb-slim="false">Counter</span>
+                <div class="center"> <i class="fas fa-plus "></i></div> <span class="ps-1" data-mdb-slim="false">Counter</span>
             </NavLink>
         </li>
         <li class="sidenav-item">
             <NavLink class="sidenav-link" href="fetchdata">
-                <i class="oi oi-list-rich" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> Fetch data </span>
+                <div class="center"><i class="fas fa-server "></i></div><span class="ps-1" data-mdb-slim="false"> Fetch data </span>
             </NavLink>
         </li>
         <li class="sidenav-item">
             <NavLink class="sidenav-link" href="css-isolation">
-                <i class="oi oi-dashboard" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> CSS isolation </span>
+                <div class="center"><i class="fab fa-css3-alt "></i></div><span class="ps-1" data-mdb-slim="false"> CSS isolation </span>
             </NavLink>
         </li>
         <li class="sidenav-item">
             <NavLink class="sidenav-link" href="js-isolation">
-                <i class="oi oi-code" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> JavaScript isolation </span>
+                <div class="center"> <i class="fab fa-js "></i></div><span class="ps-1" data-mdb-slim="false"> JavaScript isolation </span>
             </NavLink>
         </li>
         <li class="sidenav-item">
             <NavLink class="sidenav-link" href="file-upload">
-                <i class="oi oi-file" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> File upload</span>
+                <div class="center"> <i class="fas fa-upload "></i></div><span class="ps-1" data-mdb-slim="false"> File upload</span>
             </NavLink>
         </li>
         <li class="sidenav-item">
             <NavLink class="sidenav-link" href="input-radio">
-                <i class="oi oi-check" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> InputRadio</span>
+                <div class="center"> <i class="fas fa-keyboard "></i></div><span class="ps-1" data-mdb-slim="false"> InputRadio</span>
             </NavLink>
         </li>
         <li class="sidenav-item">
             <NavLink class="sidenav-link" href="virtualization">
-                <i class="oi oi-cloudy" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> Virtualization</span>
+                <div class="center"> <i class="fas fa-cloud "></i></div><span class="ps-1" data-mdb-slim="false"> Virtualization</span>
             </NavLink>
         </li>
         @if (!wasm)
         {
             <li class="sidenav-item">
                 <NavLink class="sidenav-link" href="persisted-counter">
-                    <i class="oi oi-box" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> Protected browser storage</span>
+                    <div class="center"> <i class="fas fa-box-open "></i></div><span class="ps-1" data-mdb-slim="false"> Protected browser storage</span>
                 </NavLink>
             </li>
         }
@@ -80,36 +81,36 @@
 
         <li class="sidenav-item">
             <NavLink class="sidenav-link" href="ui-focus">
-                <i class="oi oi-check" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> Set UI focus</span>
+                <div class="center"><i class="fas fa-grip-lines-vertical "></i></div><span class="ps-1" data-mdb-slim="false"> Set UI focus</span>
             </NavLink>
         </li>
 
         <li class="sidenav-item">
             <NavLink class="sidenav-link" href="influence-html-head">
-                <i class="oi oi-bell" aria-hidden="true"></i> <span class="ps-1" data-mdb-slim="false">Influence the HTML head</span>
+                <div class="center"><i class="fab fa-html5 "></i></div>  <span class="ps-1" data-mdb-slim="false">Influence the HTML head</span>
             </NavLink>
         </li>
         @if (wasm)
         {
             <li class="sidenav-item">
                 <NavLink class="sidenav-link" href="lazy-loading">
-                    <i class="oi oi-audio-spectrum" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> Lazy loading</span>
+                    <div class="center"> <i class="fas fa-spinner "></i></div><span class="ps-1" data-mdb-slim="false"> Lazy loading</span>
                 </NavLink>
             </li>
 
             <li class="sidenav-item">
                 <NavLink class="sidenav-link" href="wasm-prerendering">
-                    <i class="oi oi-excerpt" aria-hidden="true"></i><span class="ps-1" data-mdb-slim="false"> WebAssembly prerendering</span>
+                    <div class="center"> <i class="fas fa-stream "></i></div><span class="ps-1" data-mdb-slim="false"> WebAssembly prerendering</span>
                 </NavLink>
             </li>
         }
 
 
         <!-- <li class="sidenav-item">
-            <a class="sidesidenav-link" href="fetchdata">
-                <i class="fas fa-chart-area fa-fw me-3"></i><span data-mdb-slim="false">Fetch Data</span>
-            </a>
-        </li> -->
+        <a class="sidesidenav-link" href="fetchdata">
+            <i class="fas fa-chart-area fa-fw me-3"></i><span data-mdb-slim="false">Fetch Data</span>
+        </a>
+    </li> -->
 
 
     </ul>

@@ -1,4 +1,4 @@
-@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -69,13 +69,25 @@ small,
     color: var(--color-text-secondary) !important;
 }
 
-.alert-secondary strong, a {
+.alert-secondary strong {
     color: unset !important;
 }
+
+.alert-secondary a {
+    color: unset !important;
+}
+
 
 .navbar, .sidenav {
     background-color: var(--color-secondary) !important;
 }
+
+.active {
+    color: #1266f1;
+    background-color: rgba(18,102,241,.05) !important;
+}
+
+
 
 .bottom-line-hover {
     position: relative;

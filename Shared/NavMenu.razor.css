@@ -36,7 +36,6 @@
     }
 
     .nav-item ::deep a {
-      
         border-radius: 4px;
         height: 3rem;
         display: flex;
@@ -44,13 +43,18 @@
         line-height: 3rem;
     }
 
-.nav-item ::deep a.active {
-    background-color: rgba(255,255,255,0.25);
- 
-}
+        .nav-item ::deep a.active {
+            background-color: rgba(255,255,255,0.25);
+        }
 
-.nav-item ::deep a:hover {
-    background-color: rgba(255,255,255,0.1);
+        .nav-item ::deep a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
 
-}
 
+
+.center {
+    text-align: center;
+    width: 100%;
+    max-width: 20px;
+} 
