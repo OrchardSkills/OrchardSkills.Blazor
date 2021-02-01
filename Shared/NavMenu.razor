@@ -1,7 +1,7 @@
 ﻿@inject NavigationManager NavigationManager
 @inject IJSRuntime js;
 <!-- Sidenav-->
-<div id="sidenav-1" class="sidenav" data-mdb-mode="side" data-mdb-slim="true" data-mdb-slim-collapsed="true"
+<div id="sidenav-1" class="sidenav" data-mdb-mode="side" data-mdb-slim="true" data-mdb-slim-collapsed="false"
      data-mdb-content="#slim-content">
 
     <!-- Default switch -->
@@ -10,12 +10,9 @@
         <label class="form-check-label ps-1" for="flexSwitchCheckDefault"><span data-mdb-slim="false"> WebAssembly</span></label>
     </div>
 
-
-
-    <br>
     <br>
     <ul class="sidenav-menu">
-        <li class="sidenav-item">
+        <li class="sidenav-item mb-3">
             <div id="slim-toggler" class="sidesidenav-link cursor-pointer" style="
                 display: flex;
                 justify-content: center;">
@@ -23,9 +20,6 @@
 
             </div>
         </li>
-
-
-        <br>
 
 
         <li class="sidenav-item">
@@ -105,14 +99,6 @@
             </li>
         }
 
-
-        <!-- <li class="sidenav-item">
-        <a class="sidesidenav-link" href="fetchdata">
-            <i class="fas fa-chart-area fa-fw me-3"></i><span data-mdb-slim="false">Fetch Data</span>
-        </a>
-    </li> -->
-
-
     </ul>
 
 
@@ -120,9 +106,9 @@
 <!-- Sidenav-->
 
 @code {
-    private bool collapseNavMenu = true;
+
     private bool wasm;
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
 
     protected override void OnInitialized()
     {
@@ -136,12 +122,12 @@
     {
         if(firstRender)
         {
-            await importJs();
+            await ImportJs();
         }
 
     }
 
-    private async Task importJs()
+    private async Task ImportJs()
     {
          await js.InvokeAsync<IJSObjectReference>("import", "./js/sidenav.js");
 
